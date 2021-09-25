@@ -88,7 +88,7 @@ def get_plot3(x, y):
 
 	new_y = 1
 	# color=colors.reshape(-1,4)
-	plt.pie(new_y,colors=my_colors)
+	#plt.pie(new_y,colors=my_colors)
 	# plt.pie(new_y,color=my_colors.reshape(-1, 4))
 	# plt.plot([1,2], lw=4, c='xkcd:baby poop green')
 	plt.xticks(rotation=45)
