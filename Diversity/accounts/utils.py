@@ -67,6 +67,38 @@ def get_plot2(x, y):
 
 
 
+def get_plot3(x, y):
+	colors = dict(mcolors.BASE_COLORS, **mcolors.CSS4_COLORS)
+	# by_hsv = sorted((tuple(mcolors.rgb_to_hsv(mcolors.to_rgba(color)[:3])), name)
+ #                for name, color in colors.items())
+	# sorted_names = [name for hsv, name in by_hsv]
+	plt.switch_backend('AGG')
+	plt.figure(figsize=(10, 5))
+	maxvalue = max(y[0], y[1], y[2])
+	minvalue = min(y[0], y[1], y[2])
+	add_value = 1 - maxvalue
+	if maxvalue == minvalue:
+		# my_colors = [(y[0], y[1], y[2])]
+		my_colors = [(y[0]+add_value-0.02, y[1]+add_value-0.02, y[2]+add_value-0.02)]
+		# my_colors = [(1, 1, 0)]
+		title = "Perfect in allocation"
+	elif maxvalue-minvalue < 0.2 and maxvalue-minvalue > 0 and maxvalue-minvalue == 0.2:
+		my_colors = [(y[0]+add_value, y[1]+add_value, y[2]+add_value)]
+		title = "Good in allocation"
+	elif maxvalue-minvalue < 0.5 and maxvalue-minvalue > 0.2 and maxvalue-minvalue == 0.5:
+		my_colors = [(y[0]+add_value, y[1]+add_value, y[2]+add_value)]
+		title = "Fair in allocation"
+	elif maxvalue-minvalue > 0.5:
+		my_colors = [(y[0]+add_value, y[1]+add_value, y[2]+add_value)]
+		title = "Need improvements in allocation"
+
+	new_y = 1
+	plt.pie(new_y,colors=my_colors)
+	plt.xticks(rotation=45)
+	plt.tight_layout()
+	graph = get_graph()
+	return graph
+
 
 
 
