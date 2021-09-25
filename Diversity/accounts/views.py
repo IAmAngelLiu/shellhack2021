@@ -1,10 +1,17 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.db.models import Count
+import matplotlib.pyplot as plt
+from io import StringIO
+import numpy as np
 
 from .models import *
+from .utils import get_plot
 
 # Create your views here.
+
+
+
 
 def home(request):
 	categories = Points.objects.all()
@@ -19,10 +26,29 @@ def home(request):
 	total_indian = indian.count()
 	total_hispanic = hispanic.count()
 	total_college = college.count()
-	# categories = Points.objects.all()
-	# categories = Employee.objects.all()
-	# counting = Employee.objects.filter(gender='Female').count()
-	return render(request, 'accounts/home.html', {'categories': categories, 'employees': employees, 'total_female': total_female, 'total_black': total_black, 'total_indian': total_indian, 'total_hispanic': total_hispanic, 'total_college': total_college})
+	total = employees.count()
+
+	x = ['female', 'black', 'indian', 'hispanic', 'firstcollege']
+	y = [total_female, total_black, total_indian, total_hispanic, total_college]
+	chart = get_plot(x, y)
+	
+	return render(request, 'accounts/home.html', {'categories': categories, 'employees': employees, 'total_female': total_female, 'total_black': total_black, 'total_indian': total_indian, 'total_hispanic': total_hispanic, 'total_college': total_college, 'total': total, 'chart': chart})
+
+
+
+# def return_graph():
+# 	my_data = [total_female,total_black,total_indian]
+# 	my_labels = 'female','black','indian',...
+# 	plt.pie(my_data,labels=my_labels,autopct='%1.1f%%')
+# 	plt.title('Chart')
+# 	plt.axis('equal')
+# 	plt.show()
+	# imgdata = StringIO()
+ #    data = imgdata.getvalue()
+    # return data
+
+
+
 
 
 
