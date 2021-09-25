@@ -92,7 +92,7 @@ def get_plot3(x, y):
 		my_colors = [(y[0]+add_value, y[1]+add_value, y[2]+add_value)]
 		title = "Need improvements in allocation"
 
-	new_y = 1
+	new_y = [1, 0]
 	plt.pie(new_y,colors=my_colors)
 	plt.xticks(rotation=45)
 	plt.tight_layout()
