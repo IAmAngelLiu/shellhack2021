@@ -8,7 +8,8 @@ import numpy as np
 from .models import *
 from .utils import get_plot
 from .utils import get_plot1
-
+from .utils import get_plot2
+from .utils import get_plot3
 # Create your views here.
 
 
@@ -42,23 +43,17 @@ def home(request):
 	x1 = ['gender', 'race', 'education']
 	y1 = [total_female/total, total_race/total, total_college/total]
 	chart1 = get_plot1(x1, y1)
-	
+	chart2 = get_plot2(x1, y1)
+	chart3 = get_plot3(x1, y1)
+
 	return render(request, 'accounts/home.html', {'categories': categories, 'employees': employees, 'total_female': total_female, 'total_black': total_black, 
 		'total_indian': total_indian, 'total_hispanic': total_hispanic, 'total_college': total_college, 'total': total, 'chart': chart, 'total_race': total_race, 
-		'chart1': chart1, 'female_points': female_points, 'black_points': black_points, 'indian_points': indian_points, 'hispanic_points': hispanic_points, 'college_points': college_points})
+		'chart1': chart1, 'female_points': female_points, 'black_points': black_points, 'indian_points': indian_points, 'hispanic_points': hispanic_points, 
+		'college_points': college_points, 'chart2': chart2, 'chart3': chart3})
 
 
 
-# def return_graph():
-# 	my_data = [total_female,total_black,total_indian]
-# 	my_labels = 'female','black','indian',...
-# 	plt.pie(my_data,labels=my_labels,autopct='%1.1f%%')
-# 	plt.title('Chart')
-# 	plt.axis('equal')
-# 	plt.show()
-	# imgdata = StringIO()
- #    data = imgdata.getvalue()
-    # return data
+
 
 
 
