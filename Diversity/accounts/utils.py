@@ -20,11 +20,11 @@ def get_graph():
 def get_plot(x, y):
 	plt.switch_backend('AGG')
 	plt.figure(figsize=(10, 5))
-	plt.title('Chart')
+	plt.title('Diversity Pie Chart')
 	plt.pie(y,labels=x,autopct='%1.1f%%')
 	plt.xticks(rotation=45)
 	plt.xlabel('category')
-	plt.ylabel('count')
+	# plt.ylabel('count')
 	plt.tight_layout()
 	graph = get_graph()
 	return graph
@@ -69,9 +69,6 @@ def get_plot2(x, y):
 
 def get_plot3(x, y):
 	colors = dict(mcolors.BASE_COLORS, **mcolors.CSS4_COLORS)
-	# by_hsv = sorted((tuple(mcolors.rgb_to_hsv(mcolors.to_rgba(color)[:3])), name)
- #                for name, color in colors.items())
-	# sorted_names = [name for hsv, name in by_hsv]
 	plt.switch_backend('AGG')
 	plt.figure(figsize=(10, 5))
 	maxvalue = max(y[0], y[1], y[2])
@@ -95,6 +92,49 @@ def get_plot3(x, y):
 	new_y = [1, 0]
 	plt.pie(new_y,colors=my_colors)
 	plt.xticks(rotation=45)
+	plt.tight_layout()
+	graph = get_graph()
+	return graph
+
+
+def get_plot4(x, y):
+	plt.switch_backend('AGG')
+	plt.figure(figsize=(10, 5))
+	plt.title('Gender Distribution')
+	# my_colors = ['red','blue']
+	plt.pie(y,labels=x, autopct='%1.1f%%')
+	plt.xticks(rotation=45)
+	plt.xlabel('gender')
+	plt.ylabel('count')
+	plt.tight_layout()
+	graph = get_graph()
+	return graph
+
+
+
+def get_plot5(x, y):
+	plt.switch_backend('AGG')
+	plt.figure(figsize=(10, 5))
+	plt.title('Race Distribution')
+	# my_colors = ['red','blue']
+	plt.pie(y,labels=x, autopct='%1.1f%%')
+	plt.xticks(rotation=45)
+	plt.xlabel('race')
+	plt.ylabel('count')
+	plt.tight_layout()
+	graph = get_graph()
+	return graph
+
+
+def get_plot6(x, y):
+	plt.switch_backend('AGG')
+	plt.figure(figsize=(10, 5))
+	plt.title('Family Education Background Distribution')
+	# my_colors = ['red','blue']
+	plt.pie(y,labels=x, autopct='%1.1f%%')
+	plt.xticks(rotation=45)
+	plt.xlabel('family education')
+	plt.ylabel('count')
 	plt.tight_layout()
 	graph = get_graph()
 	return graph

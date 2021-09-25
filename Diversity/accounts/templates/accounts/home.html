@@ -71,10 +71,27 @@
 
 <div>
 
+{% if chart4 %}
+	<img src="data:image/png;base64, {{chart4|safe}}">
+
+{% endif %}
+
+{% if chart5 %}
+	<img src="data:image/png;base64, {{chart5|safe}}">
+
+{% endif %}
+
+{% if chart6 %}
+	<img src="data:image/png;base64, {{chart6|safe}}">
+
+{% endif %}
+
+
 {% if chart %}
 	<img src="data:image/png;base64, {{chart|safe}}">
 
 {% endif %}
+
 
 {% if chart1 %}
 	<img src="data:image/png;base64, {{chart1|safe}}">
