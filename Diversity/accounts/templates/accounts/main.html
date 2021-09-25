@@ -4,12 +4,62 @@
 	<title>Diversity and Inclusion</title>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style>
+		.shell-logo{
+			font-size: 2.5rem;
+			margin: 5px 5px;
+		}
 
+		.challenge-logo{
+			font-size: 1.5rem;
+			margin: 5px 5px;
+		}
+
+
+
+		.table-sm {
+			border-collapse: collapse;
+			margin: 25px 50px;
+			font-size: 0.6em;
+			min-width: 600px;
+			border-radius: 5px 5px 0 0;
+			overflow: hidden;
+			box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+		}
+		
+		.table-sm thead tr {
+			background-color: #198964;
+			color: #ffffff;
+			text-align: left;
+			font-weight: bold;
+		}
+		
+		.table-sm th,
+		.table-sm td {
+			padding: 12px 15px;
+		}
+		
+		.table-sm tbody tr {
+			border-bottom: 1px solid #dddddd;
+		}
+		
+		.table-sm tbody tr:nth-of-type(even) {
+			background-color: #f3f3f3;
+		}
+		
+		.table-sm tbody tr:last-of-type {
+			border-bottom: 2px solid #198964;
+		}
+		
+
+	</style>
 
 </head>
 <body>
 
-	<h1>ShellHack 2021</h1>
+	<h1 class="shell-logo">ShellHacks 2021</h1>
+	<h2 class="challenge-logo">Code What Matters by JP Morgan Chase</h2>
+	
 	<hr>
 	{% include 'accounts/navbar.html' %}
 
