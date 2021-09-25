@@ -67,35 +67,7 @@ def get_plot2(x, y):
 
 
 
-def get_plot3(x, y):
-	colors = dict(mcolors.BASE_COLORS, **mcolors.CSS4_COLORS)
-	# by_hsv = sorted((tuple(mcolors.rgb_to_hsv(mcolors.to_rgba(color)[:3])), name)
- #                for name, color in colors.items())
-	# sorted_names = [name for hsv, name in by_hsv]
-	plt.switch_backend('AGG')
-	plt.figure(figsize=(10, 5))
-	maxvalue = max(y[0], y[1], y[2])
-	minvalue = min(y[0], y[1], y[2])
-	if maxvalue == minvalue:
-		# my_colors = [(y[0], y[1], y[2])]
-		my_colors = [(y[0]*2.5, y[1]*2.5, y[2]*2.5)]
-	elif maxvalue-minvalue < 0.2 and maxvalue-minvalue > 0 and maxvalue-minvalue == 0.2:
-		my_colors = [(y[0]*2.5, y[1]*2.5, y[2]*2.5)]
-	elif maxvalue-minvalue < 0.5 and maxvalue-minvalue > 0.2 and maxvalue-minvalue == 0.5:
-		my_colors = [(y[0]*2.5, y[1]*2.5, y[2]*2.5)]
-	elif maxvalue-minvalue > 0.5:
-		my_colors = [(y[0]*2.5, y[1]*2.5, y[2]*2.5)]
 
-	new_y = 1
-	# color=colors.reshape(-1,4)
-	#plt.pie(new_y,colors=my_colors)
-	# plt.pie(new_y,color=my_colors.reshape(-1, 4))
-	# plt.plot([1,2], lw=4, c='xkcd:baby poop green')
-	plt.xticks(rotation=45)
-	plt.tight_layout()
-	graph = get_graph()
-	return graph
-	# return graph
 
 
 
