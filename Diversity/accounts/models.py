@@ -40,6 +40,30 @@ class Data(models.Model):
 		('firstcollege', 'firstcollege'),
 		)
 	category = models.CharField(max_length=100, null=True, choices=CATEGORY)
-	
+	points = models.IntegerField(null=True)
+
+
+
+class Points(models.Model):
+	TYPE = (
+		('Female', 'Female'),
+		('Black', 'Black'),
+		('American Indian', 'American Indian'),
+		('Hispanic', 'Hispanic'),
+		('firstcollege', 'firstcollege'),
+		)
+	category = models.CharField(max_length=100, null=True, choices=TYPE)
+	points = models.IntegerField(null=True)
+
+
+
+
+
+
+
+
+
+
+
 
 
