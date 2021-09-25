@@ -3,98 +3,100 @@
 {% block content %}
 
 
-
-<h1 style="margin: 0 5px;"> Diversity and Inclusion
-
+<h1 style="margin: 0 5px;"> Diversity and Inclusion</h1>
 
 <div class="row">
-	<div class="col-md-5">
-		<!-- <h5> Points </h5> -->
-		<hr>
-		<div class="card card-body">
-			<!-- <a class="btn btn-primary btn-sm btn-block" href="">
-				Points you can earn
-			</a> -->
-			<h3 style="margin: 0 50px;">Points you can earn</h3>
-			<table class="table table-sm">
-				<thead>
-					<tr>
-						<th>Category</th>
-						<th>Counts</th>
-						<th>Points</th>
-					</tr>
-				</thead>
-				
-				<tbody>
+    <div class="col-md-5">
+        <!-- <h5> Points </h5> -->
+        <hr>
+        <div class="card card-body">
+            <!-- <a class="btn btn-primary btn-sm btn-block" href="">
+                Points you can earn
+            </a> -->
+            <h3 style="margin: 0 50px;">Points you can earn</h3>
+            <table class="table table-sm">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Counts</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
 
-					<tr>
-						<td>Female </td>
-						<td>{{ total_female }} </td>
-						<td>{{ female_points }} </td>
-					</tr>
+                    <tr>
+                        <td>Female </td>
+                        <td>{{ total_female }} </td>
+                        <td>{{ female_points }} </td>
+                    </tr>
 
-					<tr>
-						<td>Black </td>
-						<td>{{ total_black }} </td>
-						<td>{{ black_points }} </td>
-					</tr>
+                    <tr>
+                        <td>Black </td>
+                        <td>{{ total_black }} </td>
+                        <td>{{ black_points }} </td>
+                    </tr>
 
-					<tr>
-						<td>American Indian </td>
-						<td>{{ total_indian }} </td>
-						<td>{{ indian_points }} </td>
-					</tr>
+                    <tr>
+                        <td>American Indian </td>
+                        <td>{{ total_indian }} </td>
+                        <td>{{ indian_points }} </td>
+                    </tr>
 
-					<tr>
-						<td>Hispanic </td>
-						<td>{{ total_hispanic }} </td>
-						<td>{{ hispanic_points }} </td>
-					</tr>
+                    <tr>
+                        <td>Hispanic </td>
+                        <td>{{ total_hispanic }} </td>
+                        <td>{{ hispanic_points }} </td>
+                    </tr>
 
-					<tr>
-						<td>First college Student in a Family </td>
-						<td>{{ total_college }} </td>
-						<td>{{ college_points }} </td>
-					</tr>
+                    <tr>
+                        <td>First college Student in a Family </td>
+                        <td>{{ total_college }} </td>
+                        <td>{{ college_points }} </td>
+                    </tr>
 
-					<tr>
-						<td>Total Employees </td>
-						<td>{{ total }} </td>
-						<td> </td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-	</div>	
+                    <tr>
+                        <td>Total Employees </td>
+                        <td>{{ total }} </td>
+                        <td> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>  
 
 </div>
 
 <div>
 
 {% if chart %}
-	<img src="data:image/png;base64, {{chart|safe}}">
+    <img src="data:image/png;base64, {{chart|safe}}">
 
 {% endif %}
 
 {% if chart1 %}
-	<img src="data:image/png;base64, {{chart1|safe}}">
+    <img src="data:image/png;base64, {{chart1|safe}}">
 
 {% endif %}
-
-
-{% if chart2 %}
-	<!-- <img src="data:image/png;base64, {{chart2|safe}}"> -->
-	{{chart2}}
-
-{% endif %}
-
-{% if chart3 %}
-	<img src="data:image/png;base64, {{chart3|safe}}">
-
-{% endif %}
-
 
 </div>
 
+
+<div class="points">
+    <h3>points you can earn in the following catagories</h3>
+    <div class="border-box">
+        <div class="item">
+            <p>gender<br>points = {{ female_points }}</p>
+        </div>
+        <div class="item">
+            <p>ethnics<br>points = {{ hispanic_points }}</p>
+        </div>
+        <div class="item">
+                <p>background<br>points = {{ college_points }}</p>
+        </div>
+    </div>
+    <h3>the result: your color will be</h3>
+    <!-- <h3 style="rgba({{Color_rgb}})">  </h3> -->
+</div>
 
 {% endblock %}
