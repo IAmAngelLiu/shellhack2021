@@ -4,7 +4,7 @@
 
 
 
-<h1> Diversity and Inclusion
+<h1 style="margin: 0 5px;"> Diversity and Inclusion
 
 
 <div class="row">
@@ -15,50 +15,54 @@
 			<!-- <a class="btn btn-primary btn-sm btn-block" href="">
 				Points you can earn
 			</a> -->
-			<h3>Points you can earn</h3>
+			<h3 style="margin: 0 50px;">Points you can earn</h3>
 			<table class="table table-sm">
-				<tr>
-					<th>Category</th>
-					<th>Counts</th>
-					<th>Points</th>
-				</tr>
-	
+				<thead>
+					<tr>
+						<th>Category</th>
+						<th>Counts</th>
+						<th>Points</th>
+					</tr>
+				</thead>
+				
+				<tbody>
 
-				<tr>
-					<td>Female </td>
-					<td>{{ total_female }} </td>
-					<td>{{ female_points }} </td>
-				</tr>
+					<tr>
+						<td>Female </td>
+						<td>{{ total_female }} </td>
+						<td>{{ female_points }} </td>
+					</tr>
 
-				<tr>
-					<td>Black </td>
-					<td>{{ total_black }} </td>
-					<td>{{ black_points }} </td>
-				</tr>
+					<tr>
+						<td>Black </td>
+						<td>{{ total_black }} </td>
+						<td>{{ black_points }} </td>
+					</tr>
 
-				<tr>
-					<td>American Indian </td>
-					<td>{{ total_indian }} </td>
-					<td>{{ indian_points }} </td>
-				</tr>
+					<tr>
+						<td>American Indian </td>
+						<td>{{ total_indian }} </td>
+						<td>{{ indian_points }} </td>
+					</tr>
 
-				<tr>
-					<td>Hispanic </td>
-					<td>{{ total_hispanic }} </td>
-					<td>{{ hispanic_points }} </td>
-				</tr>
+					<tr>
+						<td>Hispanic </td>
+						<td>{{ total_hispanic }} </td>
+						<td>{{ hispanic_points }} </td>
+					</tr>
 
-				<tr>
-					<td>First college Student in a Family </td>
-					<td>{{ total_college }} </td>
-					<td>{{ college_points }} </td>
-				</tr>
+					<tr>
+						<td>First college Student in a Family </td>
+						<td>{{ total_college }} </td>
+						<td>{{ college_points }} </td>
+					</tr>
 
-				<tr>
-					<td>Total Employees </td>
-					<td>{{ total }} </td>
-				</tr>
-
+					<tr>
+						<td>Total Employees </td>
+						<td>{{ total }} </td>
+						<td> </td>
+					</tr>
+				</tbody>
 			</table>
 		</div>
 	</div>	
