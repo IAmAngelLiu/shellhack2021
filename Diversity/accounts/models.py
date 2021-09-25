@@ -33,3 +33,13 @@ class Employee(models.Model):
 
 
 
+class Data(models.Model):
+	CATEGORY = (
+		('Gender', 'Gender'),
+		('Race', 'Race'),
+		('firstcollege', 'firstcollege'),
+		)
+	category = models.CharField(max_length=100, null=True, choices=CATEGORY)
+	
+
+
