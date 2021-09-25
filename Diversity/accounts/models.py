@@ -54,6 +54,7 @@ class Points(models.Model):
 		)
 	category = models.CharField(max_length=100, null=True, choices=TYPE)
 	points = models.IntegerField(null=True)
+	
 
 
 

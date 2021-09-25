@@ -18,10 +18,44 @@
 			<h3>Points you can earn</h3>
 			<table class="table table-sm">
 				<tr>
-					<th> </th>
 					<th>Category</th>
-					<th>Points</th>
+					<th>Counts</th>
 				</tr>
+				<!-- {% for i in female %} -->
+					<!-- <tr> -->
+						<!-- <td> {{i.name}} </td> -->
+						<!-- <td> {{i.gender}} </td> -->
+						<!-- <td> {{i.gender}} </td> -->
+						<!-- <td> {{i.points}} </td> -->
+					<!-- </tr> -->
+
+				<!-- {% endfor %} -->
+
+				<tr>
+					<td>Female </td>
+					<td>{{ total_female }} </td>
+				</tr>
+
+				<tr>
+					<td>Black </td>
+					<td>{{ total_black }} </td>
+				</tr>
+
+				<tr>
+					<td>American Indian </td>
+					<td>{{ total_indian }} </td>
+				</tr>
+
+				<tr>
+					<td>Hispanic </td>
+					<td>{{ total_hispanic }} </td>
+				</tr>
+
+				<tr>
+					<td>First college Student in a Family </td>
+					<td>{{ total_college }} </td>
+				</tr>
+
 			</table>
 		</div>
 	</div>	
