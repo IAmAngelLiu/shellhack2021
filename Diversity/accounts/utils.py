@@ -27,3 +27,21 @@ def get_plot(x, y):
 	graph = get_graph()
 	return graph
 
+
+def get_plot1(x, y):
+	plt.switch_backend('AGG')
+	plt.figure(figsize=(10, 5))
+	plt.title('Chart')
+	my_colors = ['red','blue','green']
+	plt.pie(y,labels=x,colors=my_colors, autopct='%1.1f%%')
+	plt.xticks(rotation=45)
+	plt.xlabel('category')
+	plt.ylabel('count')
+	plt.tight_layout()
+	graph = get_graph()
+	return graph
+
+
+
+
+
