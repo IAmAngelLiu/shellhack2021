@@ -3,6 +3,99 @@
 {% block content %}
 
 
+<h1 style="margin: 5px 5px;">Company Performance</h1>
+<div class="chart-container">
+ 	<div class="chart-item">
+		<div class="crop-chart">
+			{% if chart4 %}
+				<img src="data:image/png;base64, {{chart4|safe}}">
+
+			{% endif %}
+
+		</div>
+		<div class="percentage">{{gender_percent}}</div>
+	</div>
+	<div class="chart-item">
+
+		<div class="crop-chart">
+
+			{% if chart5 %}
+			<img src="data:image/png;base64, {{chart5|safe}}">
+
+			{% endif %}
+
+		</div>
+		<div class="percentage">{{hispanic_percent}}</div>
+	</div>
+	<div class="chart-item">
+		<div class="crop-chart">
+
+			{% if chart6 %}
+			<img src="data:image/png;base64, {{chart6|safe}}">
+
+			{% endif %}
+
+		</div>
+		<div class="percentage">{{college_percent}}</div>
+	</div>
+
+
+
+</div>
+
+
+
+
+{% if chart %}
+	<img src="data:image/png;base64, {{chart|safe}}">
+
+{% endif %}
+
+
+
+<!-- <div class="chart-container">
+	<div class="chart-item"></div>
+	<div class="chart-item"></div>
+	<div class="chart-item"></div> -->
+
+
+{% if chart1 %}
+	<img src="data:image/png;base64, {{chart1|safe}}">
+
+{% endif %}
+
+
+{% if chart2 %}
+	<!-- <img src="data:image/png;base64, {{chart2|safe}}"> -->
+	{{chart2}}
+
+{% endif %}
+
+{% if chart3 %}
+	<img src="data:image/png;base64, {{chart3|safe}}">
+
+{% endif %}
+
+
+<!-- </div> -->
+
+<div class="points">
+    <h3>points you can earn in the following catagories</h3>
+    <div class="box-container">
+        <div class="box-item">
+            <p>gender<br>points = {{ female_points }}</p>
+        </div>
+        <div class="box-item">
+            <p>ethnics<br>points = {{ hispanic_points }}</p>
+        </div>
+        <div class="box-item">
+                <p>background<br>points = {{ college_points }}</p>
+        </div>
+    </div>
+    <h3>the result: your color will be</h3>
+    <!-- <h3 style="rgba({{Color_rgb}})">  </h3> -->
+</div>
+
 
 <h1 style="margin: 0 5px;"> Diversity and Inclusion</h1>
 
@@ -69,88 +162,5 @@
 
 </div>
 
-
-<h1 style="margin: 25px 5px;">Your Performance</h1>
-<div class="chart-container">
-
-
-	<div class="chart-item">
-		{% if chart4 %}
-			<img src="data:image/png;base64, {{chart4|safe}}">
-
-		{% endif %}
-
-	</div>
-	<div class="chart-item">
-
-		{% if chart5 %}
-		<img src="data:image/png;base64, {{chart5|safe}}">
-
-		{% endif %}
-
-	</div>
-	<div class="chart-item">
-
-		{% if chart6 %}
-		<img src="data:image/png;base64, {{chart6|safe}}">
-
-		{% endif %}
-
-	</div>
-
-</div>
-
-
-
-
-{% if chart %}
-	<img src="data:image/png;base64, {{chart|safe}}">
-
-{% endif %}
-
-
-
-<!-- <div class="chart-container">
-	<div class="chart-item"></div>
-	<div class="chart-item"></div>
-	<div class="chart-item"></div> -->
-
-
-{% if chart1 %}
-	<img src="data:image/png;base64, {{chart1|safe}}">
-
-{% endif %}
-
-
-{% if chart2 %}
-	<!-- <img src="data:image/png;base64, {{chart2|safe}}"> -->
-	{{chart2}}
-
-{% endif %}
-
-{% if chart3 %}
-	<img src="data:image/png;base64, {{chart3|safe}}">
-
-{% endif %}
-
-
-<!-- </div> -->
-
-<div class="points">
-    <h3>points you can earn in the following catagories</h3>
-    <div class="box-container">
-        <div class="box-item">
-            <p>gender<br>points = {{ female_points }}</p>
-        </div>
-        <div class="box-item">
-            <p>ethnics<br>points = {{ hispanic_points }}</p>
-        </div>
-        <div class="box-item">
-                <p>background<br>points = {{ college_points }}</p>
-        </div>
-    </div>
-    <h3>the result: your color will be</h3>
-    <!-- <h3 style="rgba({{Color_rgb}})">  </h3> -->
-</div>
 
 {% endblock %}

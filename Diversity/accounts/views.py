@@ -41,6 +41,10 @@ def home(request):
 	total_college = college.count()
 	total = employees.count()
 	total_race = total_black + total_indian + total_hispanic
+	gender_percent = format(total_female/total,'.2%')
+	hispanic_percent = format(total_hispanic/total,'.2%')
+	college_percent = format(total_college/total,'.2%')
+
 	female_points = (total-total_female)*100
 	black_points = (total-total_black)*100
 	indian_points = (total-total_indian)*100
@@ -72,7 +76,8 @@ def home(request):
 	return render(request, 'accounts/home.html', {'categories': categories, 'employees': employees, 'total_female': total_female, 'total_black': total_black, 
 		'total_indian': total_indian, 'total_hispanic': total_hispanic, 'total_college': total_college, 'total': total, 'chart': chart, 'total_race': total_race, 
 		'chart1': chart1, 'female_points': female_points, 'black_points': black_points, 'indian_points': indian_points, 'hispanic_points': hispanic_points, 
-		'college_points': college_points, 'chart2': chart2, 'chart3': chart3, 'total_male': total_male, 'chart4': chart4, 'chart5': chart5, 'chart6': chart6})
+		'college_points': college_points, 'chart2': chart2, 'chart3': chart3, 'total_male': total_male, 'chart4': chart4, 'chart5': chart5, 'chart6': chart6,
+		'gender_percent':gender_percent, 'hispanic_percent':hispanic_percent,'college_percent':college_percent})
 
 
 
