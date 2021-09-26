@@ -45,6 +45,7 @@ def get_plot1(x, y):
 
 
 
+
 def get_plot2(x, y):
 	plt.switch_backend('AGG')
 	plt.figure(figsize=(10, 5))
@@ -140,8 +141,20 @@ def get_plot6(x, y):
 	return graph
 
 
+def get_color_code(gender_percent, race_percent, college_percent):
+	gender_rgb = (255 - 1020*(gender_percent-0.5)*(gender_percent-0.5))/256
+	race_rgb = (255 - 1020*(race_percent-0.5)*(race_percent-0.5))/256
+	college_rgb = (255 -1020*(college_percent-0.5)*(college_percent-0.5))/256
+	return [(gender_rgb, race_rgb, college_rgb)]
 
-
-
+def get_plot7(gender_percent, race_percent, college_percent):
+	color_code = get_color_code(gender_percent, race_percent, college_percent)
+	# colors = dict(mcolors.BASE_COLORS, **mcolors.CSS4_COLORS)
+	plt.switch_backend('AGG')
+	plt.figure(figsize=(10, 5))
+	new_y = [1, 0]
+	plt.pie(new_y,colors=color_code)
+	graph = get_graph()
+	return graph
 
 
