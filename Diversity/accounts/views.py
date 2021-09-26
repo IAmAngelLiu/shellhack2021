@@ -46,9 +46,9 @@ def home(request):
 	race_percent = format(total_race/total,'.2%')
 	college_percent = format(total_college/total,'.2%')
 
-	female_points = int((0.5-total_female/total)*100)*100
-	race_points = int((0.5-total_race/total)*100)*100
-	college_points = int((0.5-total_college/total)*100)*100
+	female_points = min(int((0.5-total_female/total)*100)*100,0)
+	race_points = min(int((0.5-total_race/total)*100)*100,0)
+	college_points = min(int((0.5-total_college/total)*100)*100,0)
 	max_points=female_points+race_points+college_points
 
 	x = ['female', 'black', 'indian', 'hispanic', 'firstcollege']
