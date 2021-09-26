@@ -49,6 +49,7 @@ def home(request):
 	female_points = int((0.5-total_female/total)*100)*100
 	race_points = int((0.5-total_race/total)*100)*100
 	college_points = int((0.5-total_college/total)*100)*100
+	max_points=female_points+race_points+college_points
 
 	x = ['female', 'black', 'indian', 'hispanic', 'firstcollege']
 	y = [total_female, total_black, total_indian, total_hispanic, total_college]
@@ -78,7 +79,7 @@ def home(request):
 
 	return render(request, 'accounts/home.html', {'categories': categories, 'employees': employees, 'total_female': total_female, 'total_black': total_black, 
 		'total_indian': total_indian, 'total_hispanic': total_hispanic, 'total_college': total_college, 'total': total, 'chart': chart, 'total_race': total_race, 
-		'chart1': chart1, 'female_points': female_points, 'race_points': race_points, 'college_points': college_points,
+		'chart1': chart1, 'female_points': female_points, 'race_points': race_points, 'college_points': college_points, 'max_points':max_points,
 		 'chart2': chart2, 'chart3': chart3, 'total_male': total_male, 'chart4': chart4, 'chart5': chart5, 'chart6': chart6,
 		'gender_percent':gender_percent, 'race_percent':race_percent, 'college_percent':college_percent, 'chart7': chart7, 'comment': comment })
 

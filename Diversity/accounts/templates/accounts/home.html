@@ -68,7 +68,7 @@
 			<p>Gender</p>
 		</div>
 		<div class="points">
-			<p>+{{female_points}}</p>
+			<p style="font-size: 5rem;">+{{female_points}}</p>
 		</div>
 	</div>
 	<div class="chart-item" style="height: 400px;flex-direction: column;">
@@ -76,7 +76,7 @@
 			<p>Race</p>
 		</div>
 		<div class="points">
-			<p>+{{race_points}}</p>
+			<p style="font-size: 5rem;">+{{race_points}}</p>
 		</div>
 	</div>
 	<div class="chart-item" style="height: 400px;flex-direction: column;">
@@ -88,7 +88,10 @@
 		</div>
 	</div>
 </div>
-
+<h3 style="margin: 5px 5px;">For example, <br/>
+	If the employee is female, non-white, non-Asian, 
+	and is the only person in her family who attends college,<br/>
+	Then, you can get {{female_points}} + {{race_points}} + {{college_points}} = {{max_points}} points in total!</h3>
 
 
 
