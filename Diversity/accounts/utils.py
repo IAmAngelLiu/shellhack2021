@@ -54,15 +54,18 @@ def get_plot2(x, y):
 	if maxvalue == minvalue:
 		my_colors = ['mistyrose']
 		title = "Perfect Distribution in Gender, Race, and Education"
-	elif maxvalue-minvalue < 0.2 and maxvalue-minvalue > 0 and maxvalue-minvalue == 0.2:
+	elif (maxvalue-minvalue < 0.2 and maxvalue-minvalue > 0) or maxvalue-minvalue == 0.2:
 		my_colors = ['peachpuff']
 		title = "Great Distribution in Gender, Race, and Education"
-	elif maxvalue-minvalue < 0.5 and maxvalue-minvalue > 0.2 and maxvalue-minvalue == 0.5:
+	elif (maxvalue-minvalue < 0.5 and maxvalue-minvalue > 0.2) or maxvalue-minvalue == 0.5:
 		my_colors = ['peachpuff']
 		title = "Fairly Good Distribution in Gender, Race, and Education"
 	elif maxvalue-minvalue > 0.5:
 		my_colors = ['peachpuff']
 		title = "Need Improvements in Distribution in Gender, Race, and Education"
+	else:
+		my_colors = ['peachpuff']
+		title = "Test"
 
 	return title
 
@@ -89,6 +92,8 @@ def get_plot3(x, y):
 	elif maxvalue-minvalue > 0.5:
 		my_colors = [(y[0]+add_value, y[1]+add_value, y[2]+add_value)]
 		title = "Need improvements in allocation"
+	else:
+		my_colors = [(y[0]+add_value, y[1]+add_value, y[2]+add_value)]
 
 	new_y = [1, 0]
 	plt.pie(new_y,colors=my_colors)

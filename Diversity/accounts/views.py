@@ -19,7 +19,6 @@ from .utils import comment_by_color
 
 
 
-
 def home(request):
 	categories = Points.objects.all()
 	employees = Employee.objects.all()
