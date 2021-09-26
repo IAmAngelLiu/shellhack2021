@@ -147,6 +147,22 @@ def get_color_code(gender_percent, race_percent, college_percent):
 	college_rgb = (255 -1020*(college_percent-0.5)*(college_percent-0.5))/256
 	return [(gender_rgb, race_rgb, college_rgb)]
 
+def comment_by_color(gender_percent, race_percent, college_percent):
+	tmp=get_color_code(gender_percent, race_percent, college_percent)
+	gender_color = tmp[0][0]
+	race_color = tmp[0][1]
+	education_color = tmp[0][2]
+	if gender_color+race_color+education_color > 717.1815/256:
+		return 'Perfect Distribution in Gender, Race, and Education'
+	elif gender_color+race_color+education_color > 573.75/256:
+		return 'Great Distribution in Gender, Race, and Education'
+	elif gender_color+race_color+education_color > 334.6875/256:
+		return 'Fairly Good Distribution in Gender, Race, and Education'
+	else:
+		return 'Need Improvements in Distribution in Gender, Race, and Education'
+		
+
+
 def get_plot7(gender_percent, race_percent, college_percent):
 	color_code = get_color_code(gender_percent, race_percent, college_percent)
 	# colors = dict(mcolors.BASE_COLORS, **mcolors.CSS4_COLORS)

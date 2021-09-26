@@ -14,6 +14,7 @@ from .utils import get_plot4
 from .utils import get_plot5
 from .utils import get_plot6
 from .utils import get_plot7
+from .utils import comment_by_color
 # Create your views here.
 
 
@@ -75,12 +76,14 @@ def home(request):
 	chart6 = get_plot6(x4, y4)
 
 	chart7 = get_plot7(total_female/total, total_race/total, total_college/total)
+	comment = comment_by_color(total_female/total, total_race/total, total_college/total)
+
 
 	return render(request, 'accounts/home.html', {'categories': categories, 'employees': employees, 'total_female': total_female, 'total_black': total_black, 
 		'total_indian': total_indian, 'total_hispanic': total_hispanic, 'total_college': total_college, 'total': total, 'chart': chart, 'total_race': total_race, 
 		'chart1': chart1, 'female_points': female_points, 'black_points': black_points, 'indian_points': indian_points, 'hispanic_points': hispanic_points, 
 		'college_points': college_points, 'chart2': chart2, 'chart3': chart3, 'total_male': total_male, 'chart4': chart4, 'chart5': chart5, 'chart6': chart6,
-		'gender_percent':gender_percent, 'race_percent':race_percent, 'college_percent':college_percent, 'chart7': chart7})
+		'gender_percent':gender_percent, 'race_percent':race_percent, 'college_percent':college_percent, 'chart7': chart7, 'comment': comment })
 
 
 

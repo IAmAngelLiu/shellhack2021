@@ -45,32 +45,53 @@
 <br/>
 
 <h1 style="margin: 25px 5px;">Company Color</h1>
-<div class="color_code-container" style="display: flex; justify-content: center; height:1000px; margin: 25px;">
+<div class="color_code-container" style="display: flex; justify-content: center; margin: 25px;">
 	<div class="crop-color_code">
 		{% if chart7 %}
 			<img src="data:image/png;base64, {{chart7|safe}}" style="min-width: 4000px; min-height: 2000px; ">
 		{% endif %}
 	</div>
 </div>
+<br/>
+<h3 style="display: flex; justify-content: center;"">{{comment}}</h3>
+
+<br/>
+<br/>
+
+<h1 style="margin: 5px 5px;">Find More Employees!</h1>
+<h3 style="margin: 5px 5px;">If you recommend one employee, you will get...</h3>
+<div class="chart-container">
+	<div class="chart-item" style="height: 400px; flex-direction: column;">
+		<div class="cata">
+			<p>Gender</p>
+		</div>
+		<div class="points"></div>
+	</div>
+	<div class="chart-item" style="height: 400px;flex-direction: column;">
+		<div class="cata">
+			<p>Race</p>
+		</div>
+		<div class="points"></div>
+	</div>
+	<div class="chart-item" style="height: 400px;flex-direction: column;">
+		<div class="cata">
+			<p>Education</p>
+		</div>
+		<div class="points"></div>
+	</div>
+</div>
 
 
 
 
-
-{% if chart %}
+<!-- {% if chart %}
 	<img src="data:image/png;base64, {{chart|safe}}">
 
-{% endif %}
+{% endif %} -->
 
 
 
-<!-- <div class="chart-container">
-	<div class="chart-item"></div>
-	<div class="chart-item"></div>
-	<div class="chart-item"></div> -->
-
-
-{% if chart1 %}
+<!-- {% if chart1 %}
 	<img src="data:image/png;base64, {{chart1|safe}}">
 
 {% endif %}
@@ -78,47 +99,26 @@
 
 {% if chart2 %}
 	<!-- <img src="data:image/png;base64, {{chart2|safe}}"> -->
-	{{chart2}}
+	<!-- {{chart2}}
 
 {% endif %}
 
 {% if chart3 %}
 	<img src="data:image/png;base64, {{chart3|safe}}">
 
-{% endif %}
+{% endif %} -->
 
 
-<!-- </div> -->
-
-<div class="points">
-    <h3>points you can earn in the following catagories</h3>
-    <div class="box-container">
-        <div class="box-item">
-            <p>gender<br>points = {{ female_points }}</p>
-        </div>
-        <div class="box-item">
-            <p>ethnics<br>points = {{ hispanic_points }}</p>
-        </div>
-        <div class="box-item">
-                <p>background<br>points = {{ college_points }}</p>
-        </div>
-    </div>
-    <h3>the result: your color will be</h3>
-    <!-- <h3 style="rgba({{Color_rgb}})">  </h3> -->
-</div>
 
 
-<h1 style="margin: 0 5px;"> Diversity and Inclusion</h1>
+<!-- <h1 style="margin: 0 5px;"> Diversity and Inclusion</h1> -->
 
-
+<!-- 
 <div class="row">
 	<div class="col-md-5">
-		<!-- <h5> Points </h5> -->
 		<hr>
 		<div class="card card-body">
-			<!-- <a class="btn btn-primary btn-sm btn-block" href="">
-				Points you can earn
-			</a> -->
+
 			<h3 style="margin: 0 50px;">Points you can earn</h3>
 			<table class="table table-sm">
 				<thead>
@@ -171,7 +171,7 @@
 		</div>
 	</div>	
 
-</div>
+</div> -->
 
 
 {% endblock %}
